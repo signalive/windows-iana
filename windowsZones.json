@@ -92,14 +92,7 @@
   {
     "windowsName": "Alaskan Standard Time",
     "territory": "US",
-    "iana": [
-      "America/Anchorage",
-      "America/Juneau",
-      "America/Metlakatla",
-      "America/Nome",
-      "America/Sitka",
-      "America/Yakutat"
-    ]
+    "iana": ["America/Anchorage", "America/Juneau", "America/Nome", "America/Sitka", "America/Yakutat"]
   },
   {
     "windowsName": "UTC-09",
@@ -154,7 +147,7 @@
   {
     "windowsName": "Pacific Standard Time",
     "territory": "US",
-    "iana": ["America/Los_Angeles"]
+    "iana": ["America/Los_Angeles", "America/Metlakatla"]
   },
   {
     "windowsName": "Pacific Standard Time",
@@ -878,21 +871,6 @@
     "iana": ["Etc/GMT", "Etc/UTC"]
   },
   {
-    "windowsName": "Morocco Standard Time",
-    "territory": "001",
-    "iana": ["Africa/Casablanca"]
-  },
-  {
-    "windowsName": "Morocco Standard Time",
-    "territory": "EH",
-    "iana": ["Africa/El_Aaiun"]
-  },
-  {
-    "windowsName": "Morocco Standard Time",
-    "territory": "MA",
-    "iana": ["Africa/Casablanca"]
-  },
-  {
     "windowsName": "GMT Standard Time",
     "territory": "001",
     "iana": ["Europe/London"]
@@ -1006,11 +984,6 @@
     "windowsName": "Greenwich Standard Time",
     "territory": "SN",
     "iana": ["Africa/Dakar"]
-  },
-  {
-    "windowsName": "Greenwich Standard Time",
-    "territory": "ST",
-    "iana": ["Africa/Sao_Tome"]
   },
   {
     "windowsName": "Greenwich Standard Time",
@@ -1168,6 +1141,31 @@
     "iana": ["Europe/Paris"]
   },
   {
+    "windowsName": "Morocco Standard Time",
+    "territory": "001",
+    "iana": ["Africa/Casablanca"]
+  },
+  {
+    "windowsName": "Morocco Standard Time",
+    "territory": "EH",
+    "iana": ["Africa/El_Aaiun"]
+  },
+  {
+    "windowsName": "Morocco Standard Time",
+    "territory": "MA",
+    "iana": ["Africa/Casablanca"]
+  },
+  {
+    "windowsName": "Sao Tome Standard Time",
+    "territory": "001",
+    "iana": ["Africa/Sao_Tome"]
+  },
+  {
+    "windowsName": "Sao Tome Standard Time",
+    "territory": "ST",
+    "iana": ["Africa/Sao_Tome"]
+  },
+  {
     "windowsName": "Central European Standard Time",
     "territory": "001",
     "iana": ["Europe/Warsaw"]
@@ -1268,16 +1266,6 @@
     "iana": ["Etc/GMT-1"]
   },
   {
-    "windowsName": "Namibia Standard Time",
-    "territory": "001",
-    "iana": ["Africa/Windhoek"]
-  },
-  {
-    "windowsName": "Namibia Standard Time",
-    "territory": "NA",
-    "iana": ["Africa/Windhoek"]
-  },
-  {
     "windowsName": "Jordan Standard Time",
     "territory": "001",
     "iana": ["Asia/Amman"]
@@ -1295,7 +1283,7 @@
   {
     "windowsName": "GTB Standard Time",
     "territory": "CY",
-    "iana": ["Asia/Nicosia"]
+    "iana": ["Asia/Famagusta", "Asia/Nicosia"]
   },
   {
     "windowsName": "GTB Standard Time",
@@ -1483,6 +1471,16 @@
     "iana": ["Europe/Kaliningrad"]
   },
   {
+    "windowsName": "Sudan Standard Time",
+    "territory": "001",
+    "iana": ["Africa/Khartoum"]
+  },
+  {
+    "windowsName": "Sudan Standard Time",
+    "territory": "SD",
+    "iana": ["Africa/Khartoum"]
+  },
+  {
     "windowsName": "Libya Standard Time",
     "territory": "001",
     "iana": ["Africa/Tripoli"]
@@ -1491,6 +1489,16 @@
     "windowsName": "Libya Standard Time",
     "territory": "LY",
     "iana": ["Africa/Tripoli"]
+  },
+  {
+    "windowsName": "Namibia Standard Time",
+    "territory": "001",
+    "iana": ["Africa/Windhoek"]
+  },
+  {
+    "windowsName": "Namibia Standard Time",
+    "territory": "NA",
+    "iana": ["Africa/Windhoek"]
   },
   {
     "windowsName": "Arabic Standard Time",
@@ -1506,11 +1514,6 @@
     "windowsName": "Turkey Standard Time",
     "territory": "001",
     "iana": ["Europe/Istanbul"]
-  },
-  {
-    "windowsName": "Turkey Standard Time",
-    "territory": "CY",
-    "iana": ["Asia/Famagusta"]
   },
   {
     "windowsName": "Turkey Standard Time",
@@ -1611,11 +1614,6 @@
     "windowsName": "E. Africa Standard Time",
     "territory": "MG",
     "iana": ["Indian/Antananarivo"]
-  },
-  {
-    "windowsName": "E. Africa Standard Time",
-    "territory": "SD",
-    "iana": ["Africa/Khartoum"]
   },
   {
     "windowsName": "E. Africa Standard Time",
@@ -1780,7 +1778,7 @@
   {
     "windowsName": "West Asia Standard Time",
     "territory": "KZ",
-    "iana": ["Asia/Oral", "Asia/Aqtau", "Asia/Aqtobe", "Asia/Atyrau"]
+    "iana": ["Asia/Oral", "Asia/Aqtau", "Asia/Aqtobe", "Asia/Atyrau", "Asia/Qyzylorda"]
   },
   {
     "windowsName": "West Asia Standard Time",
@@ -1890,7 +1888,7 @@
   {
     "windowsName": "Central Asia Standard Time",
     "territory": "KZ",
-    "iana": ["Asia/Almaty", "Asia/Qyzylorda"]
+    "iana": ["Asia/Almaty", "Asia/Qostanay"]
   },
   {
     "windowsName": "Central Asia Standard Time",
@@ -2104,6 +2102,11 @@
   },
   {
     "windowsName": "W. Australia Standard Time",
+    "territory": "AQ",
+    "iana": ["Antarctica/Casey"]
+  },
+  {
+    "windowsName": "W. Australia Standard Time",
     "territory": "AU",
     "iana": ["Australia/Perth"]
   },
@@ -2126,16 +2129,6 @@
     "windowsName": "Ulaanbaatar Standard Time",
     "territory": "MN",
     "iana": ["Asia/Ulaanbaatar", "Asia/Choibalsan"]
-  },
-  {
-    "windowsName": "North Korea Standard Time",
-    "territory": "001",
-    "iana": ["Asia/Pyongyang"]
-  },
-  {
-    "windowsName": "North Korea Standard Time",
-    "territory": "KP",
-    "iana": ["Asia/Pyongyang"]
   },
   {
     "windowsName": "Aus Central W. Standard Time",
@@ -2186,6 +2179,16 @@
     "windowsName": "Tokyo Standard Time",
     "territory": "ZZ",
     "iana": ["Etc/GMT-9"]
+  },
+  {
+    "windowsName": "North Korea Standard Time",
+    "territory": "001",
+    "iana": ["Asia/Pyongyang"]
+  },
+  {
+    "windowsName": "North Korea Standard Time",
+    "territory": "KP",
+    "iana": ["Asia/Pyongyang"]
   },
   {
     "windowsName": "Korea Standard Time",
@@ -2366,11 +2369,6 @@
     "windowsName": "Central Pacific Standard Time",
     "territory": "001",
     "iana": ["Pacific/Guadalcanal"]
-  },
-  {
-    "windowsName": "Central Pacific Standard Time",
-    "territory": "AQ",
-    "iana": ["Antarctica/Casey"]
   },
   {
     "windowsName": "Central Pacific Standard Time",
