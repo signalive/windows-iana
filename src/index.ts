@@ -1,6 +1,10 @@
-import map, { ZoneMap } from "./time-zone-map";
+import { IanaName, Territory, WindowsZoneName } from "./enums";
+import { map } from "./time-zone-map";
 
-export const findIana = (windowsTimeZone: string, territory: string = "001"): string[] | undefined => {
+export const findIana = (
+  windowsTimeZone: WindowsZoneName,
+  territory: Territory = Territory["001"],
+): IanaName[] | undefined => {
   const entry = map.find(
     ({ windowsName: itemName, territory: itemTerritory }) =>
       itemName === windowsTimeZone && itemTerritory === territory,
@@ -11,7 +15,10 @@ export const findIana = (windowsTimeZone: string, territory: string = "001"): st
   return entry.iana;
 };
 
-export const findOneIana = (windowsTimeZone: string, territory: string = "001"): string | undefined => {
+export const findOneIana = (
+  windowsTimeZone: WindowsZoneName,
+  territory: Territory = Territory["001"],
+): IanaName | undefined => {
   const result = findIana(windowsTimeZone, territory);
   if (typeof result === "undefined") return undefined;
   return result[0];

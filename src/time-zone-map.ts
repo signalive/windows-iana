@@ -1,13 +1,12 @@
 import mapContent = require("../windowsZones.json");
+import { IanaName, Territory, WindowsZoneName } from "./enums";
 
-const map: ZoneMap = mapContent as any;
+export const map: ZoneMap = mapContent as any;
 
 export type ZoneMap = ZoneMapEntry[];
 
 export interface ZoneMapEntry {
-  windowsName: string;
-  territory: string;
-  iana: string[];
+  windowsName: WindowsZoneName;
+  territory: Territory;
+  iana: IanaName[];
 }
-
-export default map;
