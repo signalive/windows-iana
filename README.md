@@ -49,3 +49,14 @@ import { findIana } from "windows-iana";
 const result = findIana("Romance Standard Time", "ES");
 console.log(result); // ["Europe/Madrid", "Africa/Ceuta"]
 ```
+
+## `findWindows()`
+
+```
+import { findWindows } from "windows-iana";
+
+const result = findIana("America/New_York");
+console.log(result); // Eastern Standard Time
+```
+
+There is no territory code for this function because all IANA names map to exactly one territory.

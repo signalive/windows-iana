@@ -23,3 +23,10 @@ export const findOneIana = (
   if (typeof result === "undefined") return undefined;
   return result[0];
 };
+
+export const findWindows = (ianaTimeZone: IanaName): WindowsZoneName | undefined => {
+  const entry = map.find(({ iana: itemName }) => itemName.includes(ianaTimeZone));
+  if (typeof entry === "undefined") return undefined;
+
+  return entry.windowsName;
+};
