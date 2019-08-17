@@ -1,10 +1,7 @@
-windows-iana
----
-
 [![Build Status](https://travis-ci.org/rubenillodo/windows-iana.svg?branch=master)](https://travis-ci.org/rubenillodo/windows-iana)
 [![Coverage Status](https://coveralls.io/repos/github/rubenillodo/windows-iana/badge.svg)](https://coveralls.io/github/rubenillodo/windows-iana)
 
-This library exports two functions to help convert from Windows time zones to IANA time zones (based on [this mapping definition](https://unicode.org/repos/cldr/trunk/common/supplemental/windowsZones.xml)).
+This library exports two functions to help convert from Windows time zones to IANA time zones (based on [this mapping definition](https://unicode.org/repos/cldr/trunk/common/supplemental/windowsZones.xml) and [this list of IANA aliases](https://github.com/unicode-org/cldr/blob/2dd06669d833823e26872f249aa304bc9d9d2a90/common/bcp47/timezone.xml)).
 
 # Installation
 
@@ -12,7 +9,12 @@ Add the dependency to your project with `npm install --save windows-iana` or `ya
 
 # Usage
 
-The library exports `findIana()`, which will return an array of possible IANA time zones, or `findOneIana()`, which will return just one string.
+The library exports:
+
+- `findIana()`: will return an array of possible IANA time zones, including all their aliases.
+- `findOneIana()`: will return just one string.
+- `findWindows()`: will return a string with a Windows time zone.
+- `findAlias()`: will an array of all IANA aliases, including the one passed as a parameter.
 
 ## `findOneIana()`
 
@@ -55,8 +57,17 @@ console.log(result); // ["Europe/Madrid", "Africa/Ceuta"]
 ```
 import { findWindows } from "windows-iana";
 
-const result = findIana("America/New_York");
+const result = findWindows("America/New_York");
 console.log(result); // Eastern Standard Time
 ```
 
 There is no territory code for this function because all IANA names map to exactly one territory.
+
+## `findAlias()`
+
+```
+import { findAlias } from "windows-iana";
+
+const result = findAlias("America/New_York");
+console.log(result); // ["America/New_York", "US/Eastern"]
+```

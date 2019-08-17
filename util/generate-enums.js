@@ -3,6 +3,7 @@ const path = require("path");
 const pascalCase = require("pascal-case");
 
 const windowsZones = require("../windowsZones.json");
+const ianaAliases = require("../iana.json");
 
 const generateEnumCode = (name, values) => `export enum ${name} {
   ${Array.from(values)
@@ -18,7 +19,12 @@ const generateEnums = () => {
   windowsZones.forEach(zone => {
     windowsNames.add(zone.windowsName);
     territories.add(zone.territory);
-    ianaNames.add(...zone.iana);
+  });
+
+  ianaAliases.forEach(territory => {
+    territory.alias.forEach(alias => {
+      ianaNames.add(alias);
+    });
   });
 
   return [

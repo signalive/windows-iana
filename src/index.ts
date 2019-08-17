@@ -1,18 +1,26 @@
 import { IanaName, Territory, WindowsZoneName } from "./enums";
-import { map } from "./time-zone-map";
+import { map as ianaAliasMap } from "./iana-aliases";
+import { map as timeZoneMap } from "./time-zone-map";
 
 export const findIana = (
   windowsTimeZone: WindowsZoneName,
   territory: Territory = Territory["001"],
 ): IanaName[] | undefined => {
-  const entry = map.find(
+  const entry = timeZoneMap.find(
     ({ windowsName: itemName, territory: itemTerritory }) =>
       itemName === windowsTimeZone && itemTerritory === territory,
   );
 
   if (typeof entry === "undefined") return undefined;
 
-  return entry.iana;
+  const result: IanaName[] = [];
+
+  entry.iana.map(findAlias).forEach(aliasSet => {
+    if (typeof aliasSet === "undefined") return;
+    result.push(...aliasSet);
+  });
+
+  return result;
 };
 
 export const findOneIana = (
@@ -25,8 +33,25 @@ export const findOneIana = (
 };
 
 export const findWindows = (ianaTimeZone: IanaName): WindowsZoneName | undefined => {
-  const entry = map.find(({ iana: itemName }) => itemName.includes(ianaTimeZone));
+  let result: WindowsZoneName | undefined;
+
+  const aliases = findAlias(ianaTimeZone);
+  if (typeof aliases === "undefined") return undefined;
+
+  aliases.find(alias => {
+    const entry = timeZoneMap.find(({ iana: itemName }) => itemName.includes(alias));
+    if (typeof entry === "undefined") return false;
+
+    result = entry.windowsName;
+    return true;
+  });
+
+  return result;
+};
+
+export const findAlias = (ianaTimeZone: IanaName): IanaName[] | undefined => {
+  const entry = ianaAliasMap.find(({ alias }) => alias.includes(ianaTimeZone));
   if (typeof entry === "undefined") return undefined;
 
-  return entry.windowsName;
+  return entry.alias;
 };
