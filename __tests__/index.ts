@@ -1,4 +1,4 @@
-import { findAlias, findIana, findOneIana, findWindows } from "../src";
+import { findAlias, findIana, findOneIana, findWindows, getAllIanaWindowsMap } from "../src";
 import { IanaName, Territory, WindowsZoneName } from "../src/enums";
 
 describe("findOneIana()", () => {
@@ -98,5 +98,18 @@ describe("findAlias", () => {
   });
   test("returns `undefined` if the Iana timezone cannot be converted", () => {
     expect(findAlias("fake time zone" as any)).toBeUndefined();
+  });
+});
+
+describe("getAllIanaWindowsMap", () => {
+  test("returns all IANA timezones with Windows replacements", () => {
+    expect(getAllIanaWindowsMap()).not.toBeUndefined();
+    expect(getAllIanaWindowsMap().get(IanaName.AmericaChicago)).toEqual(WindowsZoneName.CentralStandardTime);
+    expect(getAllIanaWindowsMap().get(IanaName.AmericaKentuckyLouisville)).toEqual(WindowsZoneName.EasternStandardTime);
+    expect(getAllIanaWindowsMap().get(IanaName.AsiaDhaka)).toEqual(WindowsZoneName.BangladeshStandardTime);
+    expect(getAllIanaWindowsMap().get(IanaName.AsiaJakarta)).toEqual(WindowsZoneName.SeAsiaStandardTime);
+    expect(getAllIanaWindowsMap().get(IanaName.EuropeWarsaw)).toEqual(WindowsZoneName.CentralEuropeanStandardTime);
+    expect(getAllIanaWindowsMap().get(IanaName.EuropeOslo)).toEqual(WindowsZoneName.WEuropeStandardTime);
+    expect(getAllIanaWindowsMap().get(IanaName.CanadaEastern)).toEqual(WindowsZoneName.EasternStandardTime);
   });
 });

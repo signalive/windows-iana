@@ -55,3 +55,20 @@ export const findAlias = (ianaTimeZone: IanaName): IanaName[] | undefined => {
 
   return entry.alias;
 };
+
+export const getAllIanaWindowsMap = (): Map<IanaName, WindowsZoneName> => {
+  const map = new Map<IanaName, WindowsZoneName>();
+
+  for (const IanaKeyName in IanaName) {
+    if (IanaName.hasOwnProperty(IanaKeyName)) {
+      const ianaKeyName = IanaKeyName as keyof typeof IanaName;
+      const windowsAlias = findWindows(IanaName[ianaKeyName]);
+
+      if (typeof windowsAlias !== "undefined") {
+        map.set(IanaName[ianaKeyName], windowsAlias);
+      }
+    }
+  }
+
+  return map;
+};
