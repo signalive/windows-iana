@@ -15,6 +15,7 @@ The library exports:
 - `findOneIana()`: will return just one string.
 - `findWindows()`: will return a string with a Windows time zone.
 - `findAlias()`: will an array of all IANA aliases, including the one passed as a parameter.
+- `getAllIanaWindowsMap()`: will return an map of all IANA time zones as key, and a Windows time zone as value.
 
 ## `findOneIana()`
 
@@ -70,4 +71,13 @@ import { findAlias } from "windows-iana";
 
 const result = findAlias("America/New_York");
 console.log(result); // ["America/New_York", "US/Eastern"]
+```
+
+## `getAllIanaWindowsMap()`
+
+```
+import { getAllIanaWindowsMap } from "windows-iana";
+
+const result = getAllIanaWindowsMap();
+console.log(result.get('America/New_York')); // Eastern Standard Time
 ```
