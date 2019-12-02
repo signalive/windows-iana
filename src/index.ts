@@ -3,12 +3,15 @@ import { map as ianaAliasMap } from "./iana-aliases";
 import { map as timeZoneMap } from "./time-zone-map";
 
 export const findIana = (
-  windowsTimeZone: WindowsZoneName,
-  territory: Territory = Territory["001"],
+  windowsTimeZone: WindowsZoneName | string,
+  territory: Territory | string = Territory["001"],
 ): IanaName[] | undefined => {
+  const windowsZoneNameEnum = windowsTimeZone as WindowsZoneName;
+  const territoryEnum = territory as Territory;
+
   const entry = timeZoneMap.find(
     ({ windowsName: itemName, territory: itemTerritory }) =>
-      itemName === windowsTimeZone && itemTerritory === territory,
+      itemName === windowsZoneNameEnum && itemTerritory === territoryEnum,
   );
 
   if (typeof entry === "undefined") return undefined;
@@ -24,15 +27,15 @@ export const findIana = (
 };
 
 export const findOneIana = (
-  windowsTimeZone: WindowsZoneName,
-  territory: Territory = Territory["001"],
+  windowsTimeZone: WindowsZoneName | string,
+  territory: Territory | string = Territory["001"],
 ): IanaName | undefined => {
   const result = findIana(windowsTimeZone, territory);
   if (typeof result === "undefined") return undefined;
   return result[0];
 };
 
-export const findWindows = (ianaTimeZone: IanaName): WindowsZoneName | undefined => {
+export const findWindows = (ianaTimeZone: IanaName | string): WindowsZoneName | undefined => {
   let result: WindowsZoneName | undefined;
 
   const aliases = findAlias(ianaTimeZone);
@@ -49,8 +52,9 @@ export const findWindows = (ianaTimeZone: IanaName): WindowsZoneName | undefined
   return result;
 };
 
-export const findAlias = (ianaTimeZone: IanaName): IanaName[] | undefined => {
-  const entry = ianaAliasMap.find(({ alias }) => alias.includes(ianaTimeZone));
+export const findAlias = (ianaTimeZone: IanaName | string): IanaName[] | undefined => {
+  const ianaNameEnum = ianaTimeZone as IanaName;
+  const entry = ianaAliasMap.find(({ alias }) => alias.includes(ianaNameEnum));
   if (typeof entry === "undefined") return undefined;
 
   return entry.alias;

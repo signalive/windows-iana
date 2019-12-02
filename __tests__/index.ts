@@ -8,6 +8,7 @@ describe("findOneIana()", () => {
     expect(findOneIana(WindowsZoneName.CentralStandardTime)).toBe("America/Chicago");
     expect(findOneIana(WindowsZoneName.WEuropeStandardTime)).toBe("Europe/Berlin");
     expect(findOneIana(WindowsZoneName.ChinaStandardTime)).toBe("Asia/Shanghai");
+    expect(findOneIana("China Standard Time")).toBe("Asia/Shanghai");
   });
 
   test("returns a IANA time zone when passed just a Windows time zone name and territory", () => {
@@ -16,6 +17,7 @@ describe("findOneIana()", () => {
     expect(findOneIana(WindowsZoneName.CentralStandardTime, Territory.Us)).toBe("America/Chicago");
     expect(findOneIana(WindowsZoneName.WEuropeStandardTime, Territory.De)).toBe("Europe/Berlin");
     expect(findOneIana(WindowsZoneName.ChinaStandardTime, Territory.Hk)).toBe("Asia/Hong_Kong");
+    expect(findOneIana("China Standard Time", "HK")).toBe("Asia/Hong_Kong");
   });
 
   test("returns `undefined` if the Windows time zone cannot be converted", () => {
@@ -24,6 +26,7 @@ describe("findOneIana()", () => {
 
   test("returns `undefined` if the territory cannot be converted", () => {
     expect(findOneIana(WindowsZoneName.UsMountainStandardTime, "fake" as any)).toBeUndefined();
+    expect(findOneIana("US Mountain Standard Time", "fake" as any)).toBeUndefined();
   });
 });
 
@@ -42,6 +45,7 @@ describe("findIana()", () => {
       "Asia/Harbin",
       "PRC",
     ]);
+    expect(findIana("Central Standard Time")).toEqual(["America/Chicago", "US/Central"]);
   });
 
   test("returns a list of IANA time zones when passed just a Windows time zone name and territory", () => {
@@ -65,6 +69,7 @@ describe("findIana()", () => {
     ]);
     expect(findIana(WindowsZoneName.WEuropeStandardTime, Territory.De)).toEqual(["Europe/Berlin", "Europe/Busingen"]);
     expect(findIana(WindowsZoneName.ChinaStandardTime, Territory.Hk)).toEqual(["Asia/Hong_Kong", "Hongkong"]);
+    expect(findIana("China Standard Time", "HK")).toEqual(["Asia/Hong_Kong", "Hongkong"]);
   });
 
   test("returns `undefined` if the Windows time zone cannot be converted", () => {
@@ -73,6 +78,7 @@ describe("findIana()", () => {
 
   test("returns `undefined` if the territory cannot be converted", () => {
     expect(findIana(WindowsZoneName.UsMountainStandardTime, "fake" as any)).toBeUndefined();
+    expect(findIana("US Mountain Standard Time", "fake" as any)).toBeUndefined();
   });
 });
 
@@ -84,6 +90,7 @@ describe("findWindows", () => {
     expect(findWindows(IanaName.AsiaOmsk)).toEqual("Omsk Standard Time");
     expect(findWindows(IanaName.AsiaCalcutta)).toEqual("India Standard Time");
     expect(findWindows(IanaName.AsiaKolkata)).toEqual("India Standard Time");
+    expect(findWindows("Asia/Kolkata")).toEqual("India Standard Time");
   });
   test("returns `undefined` if the Iana timezone cannot be converted", () => {
     expect(findWindows("fake time zone" as any)).toBeUndefined();
@@ -95,6 +102,7 @@ describe("findAlias", () => {
     expect(findAlias(IanaName.AmericaNewYork)).toEqual(["America/New_York", "US/Eastern"]);
     expect(findAlias(IanaName.AsiaTashkent)).toEqual(["Asia/Tashkent"]);
     expect(findAlias(IanaName.AsiaSaigon)).toEqual(["Asia/Saigon", "Asia/Ho_Chi_Minh"]);
+    expect(findAlias("Asia/Saigon")).toEqual(["Asia/Saigon", "Asia/Ho_Chi_Minh"]);
   });
   test("returns `undefined` if the Iana timezone cannot be converted", () => {
     expect(findAlias("fake time zone" as any)).toBeUndefined();
