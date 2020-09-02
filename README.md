@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/rubenillodo/windows-iana.svg?branch=master)](https://travis-ci.org/rubenillodo/windows-iana)
 [![Coverage Status](https://coveralls.io/repos/github/rubenillodo/windows-iana/badge.svg)](https://coveralls.io/github/rubenillodo/windows-iana)
 
-This library exports two functions to help convert from Windows time zones to IANA time zones (based on [this mapping definition](https://unicode.org/repos/cldr/trunk/common/supplemental/windowsZones.xml) and [this list of IANA aliases](https://github.com/unicode-org/cldr/blob/2dd06669d833823e26872f249aa304bc9d9d2a90/common/bcp47/timezone.xml)).
+This library exports two functions to help convert from Windows time zones to IANA time zones (based on [this mapping definition](https://github.com/unicode-org/cldr/blob/master/common/supplemental/windowsZones.xml) and [this list of IANA aliases](https://github.com/unicode-org/cldr/blob/master/common/bcp47/timezone.xml)).
 
 # Installation
 

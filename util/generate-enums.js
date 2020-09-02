@@ -19,6 +19,9 @@ const generateEnums = () => {
   windowsZones.forEach(zone => {
     windowsNames.add(zone.windowsName);
     territories.add(zone.territory);
+    zone.iana.forEach(alias => {
+      ianaNames.add(alias);
+    });
   });
 
   ianaAliases.forEach(territory => {
