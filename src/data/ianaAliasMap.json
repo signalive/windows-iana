@@ -107,7 +107,11 @@
   {
     "name": "arctc",
     "description": "Catamarca, Argentina",
-    "alias": ["America/Catamarca", "America/Argentina/Catamarca", "America/Argentina/ComodRivadavia"]
+    "alias": [
+      "America/Catamarca",
+      "America/Argentina/Catamarca",
+      "America/Argentina/ComodRivadavia"
+    ]
   },
   {
     "name": "arirj",
@@ -1988,7 +1992,12 @@
   {
     "name": "usind",
     "description": "Indianapolis, United States",
-    "alias": ["America/Indianapolis", "America/Fort_Wayne", "America/Indiana/Indianapolis", "US/East-Indiana"]
+    "alias": [
+      "America/Indianapolis",
+      "America/Fort_Wayne",
+      "America/Indiana/Indianapolis",
+      "US/East-Indiana"
+    ]
   },
   {
     "name": "usinvev",

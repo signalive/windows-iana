@@ -224,7 +224,13 @@
   {
     "windowsName": "Yukon Standard Time",
     "territory": "CA",
-    "iana": ["America/Whitehorse", "America/Creston", "America/Dawson", "America/Dawson_Creek", "America/Fort_Nelson"]
+    "iana": [
+      "America/Whitehorse",
+      "America/Creston",
+      "America/Dawson",
+      "America/Dawson_Creek",
+      "America/Fort_Nelson"
+    ]
   },
   {
     "windowsName": "Central America Standard Time",
@@ -717,7 +723,13 @@
   {
     "windowsName": "SA Eastern Standard Time",
     "territory": "BR",
-    "iana": ["America/Fortaleza", "America/Belem", "America/Maceio", "America/Recife", "America/Santarem"]
+    "iana": [
+      "America/Fortaleza",
+      "America/Belem",
+      "America/Maceio",
+      "America/Recife",
+      "America/Santarem"
+    ]
   },
   {
     "windowsName": "SA Eastern Standard Time",

@@ -1,83 +1,64 @@
 [![Build Status](https://travis-ci.org/rubenillodo/windows-iana.svg?branch=master)](https://travis-ci.org/rubenillodo/windows-iana)
 [![Coverage Status](https://coveralls.io/repos/github/rubenillodo/windows-iana/badge.svg)](https://coveralls.io/github/rubenillodo/windows-iana)
 
-This library exports two functions to help convert from Windows time zones to IANA time zones (based on [this mapping definition](https://github.com/unicode-org/cldr/blob/master/common/supplemental/windowsZones.xml) and [this list of IANA aliases](https://github.com/unicode-org/cldr/blob/master/common/bcp47/timezone.xml)).
+This library exports two functions to help convert from Windows time zones to IANA time zones (based
+on
+[this mapping definition](https://github.com/unicode-org/cldr/blob/master/common/supplemental/windowsZones.xml)
+and
+[this list of IANA aliases](https://github.com/unicode-org/cldr/blob/master/common/bcp47/timezone.xml)).
 
 # Installation
 
-Add the dependency to your project with `npm install --save windows-iana` or `yarn add windows-iana`.
+Add the dependency to your project with `npm install --save windows-iana` or
+`yarn add windows-iana`.
 
 # Usage
 
 The library exports:
 
-- `findIana()`: will return an array of possible IANA time zones, including all their aliases.
-- `findOneIana()`: will return just one string.
-- `findWindows()`: will return a string with a Windows time zone.
-- `findAlias()`: will an array of all IANA aliases, including the one passed as a parameter.
-- `getAllIanaWindowsMap()`: will return an map of all IANA time zones as key, and a Windows time zone as value.
-
-## `findOneIana()`
-
-```
-import { findOneIana } from "windows-iana";
-
-const result = findOneIana("Romance Standard Time");
-console.log(result); // "Europe/Paris"
-```
-
-You may also pass the territory code as a second parameter (have a look again at the [mapping by unicode.org](https://unicode.org/repos/cldr/trunk/common/supplemental/windowsZones.xml) for more details).
-
-```
-import { findOneIana } from "windows-iana";
-
-const result = findOneIana("Romance Standard Time", "ES");
-console.log(result); // "Europe/Madrid"
-```
+- [`findIana()`](#findIana): returns an array of possible IANA time zones (including all their
+  aliases) for a given Windows zone.
+- [`findWindows()`](#findWindows): returns an array of possible Windows time zones for a given IANA
+  zone and all its aliases.
+- [`findIanaAliases()`](#findIanaAliases): returns an array of IANA aliases for a given IANA zone
+  name, including the one passed as a parameter.
+- `IANA_ALIAS_MAP`: the IANA alias map used by the library.
+- `WINDOWS_TO_IANA_MAP`: the Windows to IANA map used by the library.
 
 ## `findIana()`
 
+```ts
+import { findIana } from 'windows-iana';
+
+const result = findIana('Romance Standard Time');
+console.log(result); // ['Europe/Paris', 'Europe/Brussels', 'Europe/Copenhagen', 'Europe/Madrid', 'Africa/Ceuta']
 ```
-import { findIana } from "windows-iana";
 
-const result = findIana("Romance Standard Time");
-console.log(result); // ["Europe/Paris"]
-```
+You may also pass the territory code as a second parameter (have a look at the
+[mapping by unicode.org](https://unicode.org/repos/cldr/trunk/common/supplemental/windowsZones.xml)
+for more details).
 
-You may also pass the territory code to `findIana()`.
+```ts
+import { findOneIana } from 'windows-iana';
 
-```
-import { findIana } from "windows-iana";
-
-const result = findIana("Romance Standard Time", "ES");
-console.log(result); // ["Europe/Madrid", "Africa/Ceuta"]
+const result = findIana('Romance Standard Time', 'ES');
+console.log(result); // ['Europe/Madrid', 'Africa/Ceuta']
 ```
 
 ## `findWindows()`
 
-```
-import { findWindows } from "windows-iana";
+```ts
+import { findWindows } from 'windows-iana';
 
-const result = findWindows("America/New_York");
-console.log(result); // Eastern Standard Time
-```
-
-There is no territory code for this function because all IANA names map to exactly one territory.
-
-## `findAlias()`
-
-```
-import { findAlias } from "windows-iana";
-
-const result = findAlias("America/New_York");
-console.log(result); // ["America/New_York", "US/Eastern"]
+const result = findWindows('America/New_York');
+console.log(result); // ['Eastern Standard Time']
 ```
 
-## `getAllIanaWindowsMap()`
+## `findIanaAliases()`
 
-```
-import { getAllIanaWindowsMap } from "windows-iana";
+```ts
+import { findIanaAliases } from 'windows-iana';
 
-const result = getAllIanaWindowsMap();
-console.log(result.get('America/New_York')); // Eastern Standard Time
+const result = findIanaAliases('Asia/Ho_Chi_Minh');
+console.log(result); // ['Asia/Saigon', 'Asia/Ho_Chi_Minh']
 ```
