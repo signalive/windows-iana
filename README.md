@@ -7,12 +7,18 @@ on
 and
 [this list of IANA aliases](https://github.com/unicode-org/cldr/blob/master/common/bcp47/timezone.xml)).
 
-# Installation
+## Installation
 
 Add the dependency to your project with `npm install --save windows-iana` or
 `yarn add windows-iana`.
 
-# Usage
+## Compatibility
+
+The library should work on Node.js >= 12 and all modern broswers. However, it does use
+[`[].flat()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat),
+which is not supported on IE and would require a polyfill.
+
+## Usage
 
 The library exports:
 
@@ -25,7 +31,7 @@ The library exports:
 - `IANA_ALIAS_MAP`: the IANA alias map used by the library.
 - `WINDOWS_TO_IANA_MAP`: the Windows to IANA map used by the library.
 
-## `findIana()`
+### `findIana()`
 
 ```ts
 import { findIana } from 'windows-iana';
@@ -45,7 +51,7 @@ const result = findIana('Romance Standard Time', 'ES');
 console.log(result); // ['Europe/Madrid', 'Africa/Ceuta']
 ```
 
-## `findWindows()`
+### `findWindows()`
 
 ```ts
 import { findWindows } from 'windows-iana';
@@ -54,7 +60,7 @@ const result = findWindows('America/New_York');
 console.log(result); // ['Eastern Standard Time']
 ```
 
-## `findIanaAliases()`
+### `findIanaAliases()`
 
 ```ts
 import { findIanaAliases } from 'windows-iana';
