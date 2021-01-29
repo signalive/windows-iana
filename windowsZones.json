@@ -92,7 +92,14 @@
   {
     "windowsName": "Alaskan Standard Time",
     "territory": "US",
-    "iana": ["America/Anchorage", "America/Juneau", "America/Nome", "America/Sitka", "America/Yakutat"]
+    "iana": [
+      "America/Anchorage",
+      "America/Juneau",
+      "America/Metlakatla",
+      "America/Nome",
+      "America/Sitka",
+      "America/Yakutat"
+    ]
   },
   {
     "windowsName": "UTC-09",
@@ -142,12 +149,12 @@
   {
     "windowsName": "Pacific Standard Time",
     "territory": "CA",
-    "iana": ["America/Vancouver", "America/Dawson", "America/Whitehorse"]
+    "iana": ["America/Vancouver"]
   },
   {
     "windowsName": "Pacific Standard Time",
     "territory": "US",
-    "iana": ["America/Los_Angeles", "America/Metlakatla"]
+    "iana": ["America/Los_Angeles"]
   },
   {
     "windowsName": "Pacific Standard Time",
@@ -158,11 +165,6 @@
     "windowsName": "US Mountain Standard Time",
     "territory": "001",
     "iana": ["America/Phoenix"]
-  },
-  {
-    "windowsName": "US Mountain Standard Time",
-    "territory": "CA",
-    "iana": ["America/Dawson_Creek", "America/Creston", "America/Fort_Nelson"]
   },
   {
     "windowsName": "US Mountain Standard Time",
@@ -213,6 +215,16 @@
     "windowsName": "Mountain Standard Time",
     "territory": "ZZ",
     "iana": ["MST7MDT"]
+  },
+  {
+    "windowsName": "Yukon Standard Time",
+    "territory": "001",
+    "iana": ["America/Whitehorse"]
+  },
+  {
+    "windowsName": "Yukon Standard Time",
+    "territory": "CA",
+    "iana": ["America/Whitehorse", "America/Creston", "America/Dawson", "America/Dawson_Creek", "America/Fort_Nelson"]
   },
   {
     "windowsName": "Central America Standard Time",
@@ -453,6 +465,16 @@
     "iana": ["America/Indianapolis", "America/Indiana/Marengo", "America/Indiana/Vevay"]
   },
   {
+    "windowsName": "Turks And Caicos Standard Time",
+    "territory": "001",
+    "iana": ["America/Grand_Turk"]
+  },
+  {
+    "windowsName": "Turks And Caicos Standard Time",
+    "territory": "TC",
+    "iana": ["America/Grand_Turk"]
+  },
+  {
     "windowsName": "Paraguay Standard Time",
     "territory": "001",
     "iana": ["America/Asuncion"]
@@ -653,16 +675,6 @@
     "iana": ["America/Santiago"]
   },
   {
-    "windowsName": "Turks And Caicos Standard Time",
-    "territory": "001",
-    "iana": ["America/Grand_Turk"]
-  },
-  {
-    "windowsName": "Turks And Caicos Standard Time",
-    "territory": "TC",
-    "iana": ["America/Grand_Turk"]
-  },
-  {
     "windowsName": "Newfoundland Standard Time",
     "territory": "001",
     "iana": ["America/St_Johns"]
@@ -700,7 +712,7 @@
   {
     "windowsName": "SA Eastern Standard Time",
     "territory": "AQ",
-    "iana": ["Antarctica/Rothera"]
+    "iana": ["Antarctica/Rothera", "Antarctica/Palmer"]
   },
   {
     "windowsName": "SA Eastern Standard Time",
@@ -774,11 +786,6 @@
     "windowsName": "Magallanes Standard Time",
     "territory": "001",
     "iana": ["America/Punta_Arenas"]
-  },
-  {
-    "windowsName": "Magallanes Standard Time",
-    "territory": "AQ",
-    "iana": ["Antarctica/Palmer"]
   },
   {
     "windowsName": "Magallanes Standard Time",
@@ -991,6 +998,31 @@
     "iana": ["Africa/Lome"]
   },
   {
+    "windowsName": "Sao Tome Standard Time",
+    "territory": "001",
+    "iana": ["Africa/Sao_Tome"]
+  },
+  {
+    "windowsName": "Sao Tome Standard Time",
+    "territory": "ST",
+    "iana": ["Africa/Sao_Tome"]
+  },
+  {
+    "windowsName": "Morocco Standard Time",
+    "territory": "001",
+    "iana": ["Africa/Casablanca"]
+  },
+  {
+    "windowsName": "Morocco Standard Time",
+    "territory": "EH",
+    "iana": ["Africa/El_Aaiun"]
+  },
+  {
+    "windowsName": "Morocco Standard Time",
+    "territory": "MA",
+    "iana": ["Africa/Casablanca"]
+  },
+  {
     "windowsName": "W. Europe Standard Time",
     "territory": "001",
     "iana": ["Europe/Berlin"]
@@ -1141,31 +1173,6 @@
     "iana": ["Europe/Paris"]
   },
   {
-    "windowsName": "Morocco Standard Time",
-    "territory": "001",
-    "iana": ["Africa/Casablanca"]
-  },
-  {
-    "windowsName": "Morocco Standard Time",
-    "territory": "EH",
-    "iana": ["Africa/El_Aaiun"]
-  },
-  {
-    "windowsName": "Morocco Standard Time",
-    "territory": "MA",
-    "iana": ["Africa/Casablanca"]
-  },
-  {
-    "windowsName": "Sao Tome Standard Time",
-    "territory": "001",
-    "iana": ["Africa/Sao_Tome"]
-  },
-  {
-    "windowsName": "Sao Tome Standard Time",
-    "territory": "ST",
-    "iana": ["Africa/Sao_Tome"]
-  },
-  {
     "windowsName": "Central European Standard Time",
     "territory": "001",
     "iana": ["Europe/Warsaw"]
@@ -1283,7 +1290,7 @@
   {
     "windowsName": "GTB Standard Time",
     "territory": "CY",
-    "iana": ["Asia/Famagusta", "Asia/Nicosia"]
+    "iana": ["Asia/Nicosia", "Asia/Famagusta"]
   },
   {
     "windowsName": "GTB Standard Time",
@@ -1384,6 +1391,11 @@
     "windowsName": "South Africa Standard Time",
     "territory": "RW",
     "iana": ["Africa/Kigali"]
+  },
+  {
+    "windowsName": "South Africa Standard Time",
+    "territory": "SS",
+    "iana": ["Africa/Juba"]
   },
   {
     "windowsName": "South Africa Standard Time",
@@ -1568,7 +1580,7 @@
   {
     "windowsName": "Russian Standard Time",
     "territory": "RU",
-    "iana": ["Europe/Moscow", "Europe/Kirov", "Europe/Volgograd"]
+    "iana": ["Europe/Moscow", "Europe/Kirov"]
   },
   {
     "windowsName": "Russian Standard Time",
@@ -1619,11 +1631,6 @@
     "windowsName": "E. Africa Standard Time",
     "territory": "SO",
     "iana": ["Africa/Mogadishu"]
-  },
-  {
-    "windowsName": "E. Africa Standard Time",
-    "territory": "SS",
-    "iana": ["Africa/Juba"]
   },
   {
     "windowsName": "E. Africa Standard Time",
@@ -1746,6 +1753,16 @@
     "iana": ["Asia/Tbilisi"]
   },
   {
+    "windowsName": "Volgograd Standard Time",
+    "territory": "001",
+    "iana": ["Europe/Volgograd"]
+  },
+  {
+    "windowsName": "Volgograd Standard Time",
+    "territory": "RU",
+    "iana": ["Europe/Volgograd"]
+  },
+  {
     "windowsName": "Caucasus Standard Time",
     "territory": "001",
     "iana": ["Asia/Yerevan"]
@@ -1778,7 +1795,7 @@
   {
     "windowsName": "West Asia Standard Time",
     "territory": "KZ",
-    "iana": ["Asia/Oral", "Asia/Aqtau", "Asia/Aqtobe", "Asia/Atyrau", "Asia/Qyzylorda"]
+    "iana": ["Asia/Oral", "Asia/Aqtau", "Asia/Aqtobe", "Asia/Atyrau"]
   },
   {
     "windowsName": "West Asia Standard Time",
@@ -1829,6 +1846,16 @@
     "windowsName": "Pakistan Standard Time",
     "territory": "PK",
     "iana": ["Asia/Karachi"]
+  },
+  {
+    "windowsName": "Qyzylorda Standard Time",
+    "territory": "001",
+    "iana": ["Asia/Qyzylorda"]
+  },
+  {
+    "windowsName": "Qyzylorda Standard Time",
+    "territory": "KZ",
+    "iana": ["Asia/Qyzylorda"]
   },
   {
     "windowsName": "India Standard Time",
@@ -2102,11 +2129,6 @@
   },
   {
     "windowsName": "W. Australia Standard Time",
-    "territory": "AQ",
-    "iana": ["Antarctica/Casey"]
-  },
-  {
-    "windowsName": "W. Australia Standard Time",
     "territory": "AU",
     "iana": ["Australia/Perth"]
   },
@@ -2293,7 +2315,7 @@
   {
     "windowsName": "Tasmania Standard Time",
     "territory": "AU",
-    "iana": ["Australia/Hobart", "Australia/Currie"]
+    "iana": ["Australia/Hobart", "Australia/Currie", "Antarctica/Macquarie"]
   },
   {
     "windowsName": "Vladivostok Standard Time",
@@ -2372,8 +2394,8 @@
   },
   {
     "windowsName": "Central Pacific Standard Time",
-    "territory": "AU",
-    "iana": ["Antarctica/Macquarie"]
+    "territory": "AQ",
+    "iana": ["Antarctica/Casey"]
   },
   {
     "windowsName": "Central Pacific Standard Time",

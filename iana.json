@@ -852,7 +852,7 @@
   {
     "name": "glgoh",
     "description": "Nuuk (Godthåb), Greenland",
-    "alias": ["America/Godthab"]
+    "alias": ["America/Godthab", "America/Nuuk"]
   },
   {
     "name": "globy",

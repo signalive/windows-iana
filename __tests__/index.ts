@@ -13,7 +13,7 @@ describe("findOneIana()", () => {
 
   test("returns a IANA time zone when passed just a Windows time zone name and territory", () => {
     expect(findOneIana(WindowsZoneName.UtcMinus_11, Territory.Um)).toBe("Pacific/Midway");
-    expect(findOneIana(WindowsZoneName.UsMountainStandardTime, Territory.Ca)).toBe("America/Dawson_Creek");
+    expect(findOneIana(WindowsZoneName.UsMountainStandardTime, Territory.Mx)).toBe("America/Hermosillo");
     expect(findOneIana(WindowsZoneName.CentralStandardTime, Territory.Us)).toBe("America/Chicago");
     expect(findOneIana(WindowsZoneName.WEuropeStandardTime, Territory.De)).toBe("Europe/Berlin");
     expect(findOneIana(WindowsZoneName.ChinaStandardTime, Territory.Hk)).toBe("Asia/Hong_Kong");
@@ -50,11 +50,7 @@ describe("findIana()", () => {
 
   test("returns a list of IANA time zones when passed just a Windows time zone name and territory", () => {
     expect(findIana(WindowsZoneName.UtcMinus_11, Territory.Um)).toEqual(["Pacific/Midway"]);
-    expect(findIana(WindowsZoneName.UsMountainStandardTime, Territory.Ca)).toEqual([
-      "America/Dawson_Creek",
-      "America/Creston",
-      "America/Fort_Nelson",
-    ]);
+    expect(findIana(WindowsZoneName.UsMountainStandardTime, Territory.Mx)).toEqual(["America/Hermosillo"]);
     expect(findIana(WindowsZoneName.CentralStandardTime, Territory.Us)).toEqual([
       "America/Chicago",
       "US/Central",
