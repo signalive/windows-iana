@@ -37,17 +37,6 @@ const result = findIana('Romance Standard Time');
 console.log(result); // ['Europe/Paris', 'Europe/Brussels', 'Europe/Copenhagen', 'Europe/Madrid', 'Africa/Ceuta']
 ```
 
-You may also pass the territory code as a second parameter (have a look at the
-[mapping by unicode.org](https://unicode.org/repos/cldr/trunk/common/supplemental/windowsZones.xml)
-for more details).
-
-```ts
-import { findOneIana } from 'windows-iana';
-
-const result = findIana('Romance Standard Time', 'ES');
-console.log(result); // ['Europe/Madrid', 'Africa/Ceuta']
-```
-
 ### `findWindows()`
 
 ```ts
