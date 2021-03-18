@@ -1,7 +1,7 @@
 {
   "name": "windows-iana",
   "description": "A small tool to convert between Windows time zones and IANA",
-  "version": "0.0.0-development",
+  "version": "5.0.2",
   "module": "dist/windows-iana.esm.js",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
